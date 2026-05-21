@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 const links = [
-  { label: "About", href: "#studio" },
-  { label: "Services", href: "#services" },
-  { label: "Reels", href: "#work" },
-  { label: "Gallery", href: "#work" },
+  { label: "Photos", href: "#photos" },
+  { label: "Films", href: "#films" },
+  { label: "Collections", href: "#services" },
+  { label: "Studio", href: "#studio" },
   { label: "Contact", href: "#contact" },
 ];
 

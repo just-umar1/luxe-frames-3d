@@ -2,10 +2,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
-  { n: "12", l: "Years behind the lens" },
-  { n: "240+", l: "Productions delivered" },
-  { n: "18", l: "Industry awards" },
-  { n: "4", l: "Cities, one studio" },
+  { n: "180+", l: "Weddings filmed" },
+  { n: "12", l: "Years documenting love" },
+  { n: "22", l: "Countries travelled" },
+  { n: "100%", l: "Couples we'd shoot again" },
 ];
 
 export function Studio() {
@@ -22,19 +22,19 @@ export function Studio() {
       <div className="max-w-7xl mx-auto relative">
         <div className="grid md:grid-cols-12 gap-12 items-end mb-24">
           <div className="md:col-span-7">
-            <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-primary mb-4">
-              03 — Studio
+            <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-foreground/60 mb-4">
+              04 — Studio
             </p>
-            <h2 className="font-display text-5xl md:text-7xl leading-[1.05] text-balance">
-              MS Photography is a small <em className="text-primary">crew</em> with a long memory for light.
+            <h2 className="font-display text-4xl md:text-6xl leading-[1.05] text-balance">
+              A small wedding <em className="font-script font-normal">crew</em> with a long memory for light.
             </h2>
           </div>
           <motion.p
             style={{ y }}
             className="md:col-span-4 md:col-start-9 text-muted-foreground leading-relaxed"
           >
-            Founded by Mira Solano in 2013, we run a low-key studio in the industrial east end —
-            two stages, a colorist's suite, and a wall of glass we've collected for a decade.
+            Founded by Mira Solano in 2013, MS Studios is a two-person photo & film team
+            travelling worldwide for weddings — quietly, without ever interrupting the day.
           </motion.p>
         </div>
 
@@ -48,7 +48,7 @@ export function Studio() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="bg-background p-8 md:p-10"
             >
-              <div className="font-display text-5xl md:text-6xl text-primary mb-3">{s.n}</div>
+              <div className="font-display text-5xl md:text-6xl text-foreground mb-3">{s.n}</div>
               <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{s.l}</p>
             </motion.div>
           ))}
