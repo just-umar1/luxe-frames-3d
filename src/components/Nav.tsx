@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 
 const links = [
-  { label: "Work", href: "#work" },
+  { label: "About", href: "#studio" },
   { label: "Services", href: "#services" },
-  { label: "Studio", href: "#studio" },
+  { label: "Reels", href: "#work" },
+  { label: "Gallery", href: "#work" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -19,36 +20,33 @@ export function Nav() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "backdrop-blur-xl bg-background/70 border-b border-border/40 py-3"
-          : "py-6"
+        scrolled ? "backdrop-blur-xl bg-background/60 py-3" : "py-6"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2 group">
-          <span className="w-8 h-8 rounded-full border border-primary/60 flex items-center justify-center text-primary font-display text-sm tracking-wider group-hover:bg-primary/10 transition-colors">
-            MS
-          </span>
-          <span className="font-display text-lg tracking-[0.2em] uppercase text-foreground/90 hidden sm:inline">
-            Photography
-          </span>
+      <nav className="max-w-[1600px] mx-auto px-8 flex items-center justify-between">
+        <a href="#top" className="font-script text-2xl md:text-3xl tracking-tight text-foreground/95 hover:text-foreground transition-colors">
+          MS Studios
         </a>
-        <ul className="hidden md:flex items-center gap-10 text-xs uppercase tracking-[0.25em] text-muted-foreground">
+        <ul className="hidden md:flex items-center gap-12 text-[11px] uppercase tracking-[0.35em] text-foreground/80">
           {links.map((l) => (
-            <li key={l.href}>
-              <a href={l.href} className="hover:text-primary transition-colors relative group">
+            <li key={l.label}>
+              <a href={l.href} className="hover:text-foreground/50 transition-colors">
                 {l.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-300" />
               </a>
             </li>
           ))}
         </ul>
-        <a
-          href="#contact"
-          className="text-xs uppercase tracking-[0.25em] px-4 py-2 border border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all"
-        >
-          Book
-        </a>
+        <div className="flex items-center gap-5 text-foreground/70">
+          <a href="#" aria-label="Instagram" className="hover:text-foreground transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok" className="hover:text-foreground transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8.5a6 6 0 0 1-4-1.5v8a5.5 5.5 0 1 1-5.5-5.5v3a2.5 2.5 0 1 0 2.5 2.5V3h3a4 4 0 0 0 4 4v1.5z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" className="hover:text-foreground transition-colors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M10 9l5 3-5 3V9z" fill="currentColor"/></svg>
+          </a>
+        </div>
       </nav>
     </header>
   );
