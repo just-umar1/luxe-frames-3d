@@ -84,18 +84,6 @@ export function Hero() {
         <div className="absolute inset-0" style={{ background: "var(--gradient-vignette)" }} />
       </div>
 
-      <div className="relative z-10 w-full px-6 pt-24 flex flex-col items-center">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="text-[11px] md:text-xs uppercase tracking-[0.5em] text-foreground/80 mb-10 md:mb-12"
-        >
-          Cinematic Filming & Photography
-        </motion.p>
-
-        <ArchedTitle />
-      </div>
 
       {/* scroll indicator */}
       <motion.div
