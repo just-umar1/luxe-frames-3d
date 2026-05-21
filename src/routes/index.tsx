@@ -1,26 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/Nav";
+import { Hero } from "@/components/Hero";
+import { Portfolio } from "@/components/Portfolio";
+import { Services } from "@/components/Services";
+import { Studio } from "@/components/Studio";
+import { Contact } from "@/components/Contact";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "MS Photography Studios — Dark, cinematic photography & film" },
+      {
+        name: "description",
+        content:
+          "MS Photography Studios is a dark-aesthetic photography and videography studio for portrait, editorial, brand film and event work.",
+      },
+      { property: "og:title", content: "MS Photography Studios" },
+      {
+        property: "og:description",
+        content: "Cinematic photography & film. Shadow over spectacle.",
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="relative bg-background text-foreground">
+      <Nav />
+      <Hero />
+      <Portfolio />
+      <Services />
+      <Studio />
+      <Contact />
+    </main>
+  );
 }
