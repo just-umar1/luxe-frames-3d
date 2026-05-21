@@ -1,5 +1,18 @@
 import { motion } from "framer-motion";
-import { HeroCanvas } from "./HeroCanvas";
+import { lazy, Suspense, useEffect, useState } from "react";
+
+const HeroCanvas = lazy(() => import("./HeroCanvas").then((m) => ({ default: m.HeroCanvas })));
+
+function ClientCanvas() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
+  return (
+    <Suspense fallback={null}>
+      <HeroCanvas />
+    </Suspense>
+  );
+}
 
 export function Hero() {
   return (
@@ -13,7 +26,7 @@ export function Hero() {
 
       {/* 3D canvas */}
       <div className="absolute inset-0 z-0">
-        <HeroCanvas />
+        <ClientCanvas />
       </div>
 
       {/* Copy */}
